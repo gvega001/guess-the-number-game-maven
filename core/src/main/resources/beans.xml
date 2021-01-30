@@ -5,4 +5,3 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="numberGenerator" class="online.dev4you.NumberGeneratorImpl"/>
 </beans>
-
