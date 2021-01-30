@@ -6,6 +6,7 @@
     </appender>
 
     <logger name="online.dev4you" level="DEBUG"/>
+    <logger name="spring.framework" level="DEBUG"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
