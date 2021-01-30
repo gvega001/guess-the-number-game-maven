@@ -1,7 +1,12 @@
 package online.dev4you;
 
+import  org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class GameImpl implements Game{
 
+    //***=== constants ***===
+    private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
     @Override
     public int getNumber() {
         return 0;
