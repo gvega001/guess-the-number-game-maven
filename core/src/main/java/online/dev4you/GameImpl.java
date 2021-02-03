@@ -7,6 +7,27 @@ public class GameImpl implements Game{
 
     //***=== constants ***===
     private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
+
+    //**=== fields ***===
+    private NumberGenerator numberGenerator;
+    private int guessCount = 5;
+    private int number;
+    private int guess;
+    private int smallest;
+    private int biggest;
+    private int remainingGuesses;
+    private boolean validNumberRange = true;
+
+    //**=== public methods ==
+    @Override
+    public void reset() {
+    smallest = 0;
+    guess = 0;
+    remainingGuesses = guessCount;
+    biggest = numberGenerator.getMaxNumber();
+    number = numberGenerator.next();
+    log.debug("the number is {}", number);
+    }
     @Override
     public int getNumber() {
         return 0;
@@ -21,7 +42,6 @@ public class GameImpl implements Game{
     public void setGuess(int guess) {
 
     }
-
     @Override
     public int getSmallest() {
         return 0;
@@ -38,15 +58,9 @@ public class GameImpl implements Game{
     }
 
     @Override
-    public void reset() {
-
-    }
-
-    @Override
     public void check() {
 
     }
-
     @Override
     public boolean isValidNumber() {
         return false;
