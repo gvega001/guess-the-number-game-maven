@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
@@ -6,8 +7,8 @@
 
     <bean id="numberGenerator" class="online.dev4you.NumberGeneratorImpl"/>
 
-    <bean id="game" class="online.dev4you.GameImpl">
-        <constructor-arg ref="numberGenerator"/>
+    <bean id="game" class="online.dev4you.GameImpl" init-method="reset">
+        <property name="numberGenerator" ref="numberGenerator"/>
     </bean>
 
 
