@@ -17,7 +17,7 @@ public class GameImpl implements Game{
     //**=== fields ***===
     @Autowired
     private NumberGenerator numberGenerator;
-    private int guessCount = 5;
+    private final int guessCount = 5;
     private int number;
     private int guess;
     private int smallest;

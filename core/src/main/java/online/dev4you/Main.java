@@ -35,6 +35,8 @@ public class Main {
         MessageGenerator messageGenerator =
                 context.getBean(MessageGenerator.class);
 
+        messageGenerator.getMainMessage();
+        messageGenerator.getResultMessage();
 
         //game.reset();
         context.close();
