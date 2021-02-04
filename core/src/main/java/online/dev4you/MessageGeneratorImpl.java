@@ -16,32 +16,20 @@ public class MessageGeneratorImpl implements MessageGenerator{
 
     //**=== fields ***===
     @Autowired
-    private MessageGenerator messageGenerator;
-    private  String mainMessage;
-    private String resultMessage;
+    private Game game;
+    private int guessCount =10;
 
     // === init ==
     @PostConstruct
     @Override
     public String getMainMessage() {
-        System.out.println("In Post Construct");
-        return mainMessage;
+          return "getMainMessage()called";
     }
 
     @PreDestroy
     @Override
     public String getResultMessage() {
-        System.out.println("In Pre Destroy");
-        return resultMessage;
+        return "getResultMessage() called";
     }
 
-    public void setMainMessage(){
-        String mainMessage = "Main Message";
-        this.mainMessage = mainMessage;
-    }
-
-    public void setResultMessage(){
-        String resultMessage= "Result Message";
-        this.resultMessage = resultMessage;
-    }
 }
