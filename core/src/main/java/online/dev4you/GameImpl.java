@@ -3,6 +3,8 @@ package online.dev4you;
 import  org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PostConstruct;
+
 public class GameImpl implements Game{
 
     //***=== constants ***===
@@ -18,6 +20,18 @@ public class GameImpl implements Game{
     private int remainingGuesses;
     private boolean validNumberRange = true;
 
+    //**=== init **===
+    @PostConstruct
+    @Override
+    public void reset() {
+        smallest = 0;
+        guess = 0;
+        remainingGuesses = guessCount;
+        biggest = numberGenerator.getMaxNumber();
+        number = numberGenerator.next();
+        log.debug("the number is {}", number);
+    }
+
     //=== constructors ===
     public GameImpl(NumberGenerator numberGenerator) {
         this.numberGenerator = numberGenerator;
@@ -28,15 +42,7 @@ public class GameImpl implements Game{
         this.numberGenerator = numberGenerator;
     }
 
-    @Override
-    public void reset() {
-    smallest = 0;
-    guess = 0;
-    remainingGuesses = guessCount;
-    biggest = numberGenerator.getMaxNumber();
-    number = numberGenerator.next();
-    log.debug("the number is {}", number);
-    }
+
     @Override
     public int getNumber() {
         return number;
