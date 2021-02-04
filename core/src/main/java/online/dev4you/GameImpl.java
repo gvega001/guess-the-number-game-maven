@@ -4,6 +4,7 @@ import  org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 public class GameImpl implements Game{
 
@@ -30,6 +31,10 @@ public class GameImpl implements Game{
         biggest = numberGenerator.getMaxNumber();
         number = numberGenerator.next();
         log.debug("the number is {}", number);
+    }
+    @PreDestroy
+    public void preDestroy(){
+        log.info("in game preDestroy");
     }
 
     //=== constructors ===
