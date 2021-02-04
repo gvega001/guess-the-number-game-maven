@@ -6,11 +6,7 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="numberGenerator" class="online.dev4you.NumberGeneratorImpl"/>
-
-    <bean id="game" class="online.dev4you.GameImpl">
+    <bean id="game" class="online.dev4you.GameImpl" init-method="reset">
         <property name="numberGenerator" ref="numberGenerator"/>
     </bean>
-
-    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
-
 </beans>
