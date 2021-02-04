@@ -6,6 +6,9 @@
 
     <bean id="numberGenerator" class="online.dev4you.NumberGeneratorImpl"/>
 
-    <bean id="game" class="online.dev4you.GameImpl"/>
+    <bean id="game" class="online.dev4you.GameImpl">
+        <constructor-arg ref="numberGenerator"/>
+    </bean>
+
 
 </beans>
