@@ -59,7 +59,16 @@ public class GameImpl implements Game{
 
     @Override
     public void check() {
-
+        checkValidNumberRange();
+        if(validNumberRange){
+            if(guess>number){
+                biggest = guess =1;
+            }
+            if(guess< number){
+                smallest = guess +1;
+            }
+        }
+        remainingGuesses--;
     }
     @Override
     public boolean isValidNumberRange() {
@@ -74,5 +83,10 @@ public class GameImpl implements Game{
     @Override
     public boolean isGameLost() {
         return !isGameWon() && remainingGuesses <=0;
+    }
+
+    //**=== private methods **===
+    private void checkValidNumberRange(){
+        validNumberRange = (guess >= smallest) && (guess <= biggest);
     }
 }
