@@ -30,12 +30,12 @@ public class GameImpl implements Game{
     }
     @Override
     public int getNumber() {
-        return 0;
+        return number;
     }
 
     @Override
     public int getGuess() {
-        return 0;
+        return guess;
     }
 
     @Override
@@ -44,17 +44,17 @@ public class GameImpl implements Game{
     }
     @Override
     public int getSmallest() {
-        return 0;
+        return smallest;
     }
 
     @Override
     public int getBiggest() {
-        return 0;
+        return biggest;
     }
 
     @Override
     public int getRemainGuesses() {
-        return 0;
+        return remainingGuesses;
     }
 
     @Override
@@ -62,17 +62,17 @@ public class GameImpl implements Game{
 
     }
     @Override
-    public boolean isValidNumber() {
-        return false;
+    public boolean isValidNumberRange() {
+        return validNumberRange;
     }
 
     @Override
     public boolean isGameWon() {
-        return false;
+        return guess==number;
     }
 
     @Override
     public boolean isGameLost() {
-        return false;
+        return !isGameWon() && remainingGuesses <=0;
     }
 }
