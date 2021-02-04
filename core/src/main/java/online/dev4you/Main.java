@@ -18,7 +18,7 @@ public class Main {
 
         //get the game bean context (container)
         NumberGenerator numberGenerator
-                = context.getBean("numberGenerator", NumberGenerator.class);
+                = context.getBean(NumberGenerator.class);
 
         //call the method next() to get a random number
         int number = numberGenerator.next();
@@ -28,7 +28,7 @@ public class Main {
 
         //get the game bean context (container)
         Game game =
-                context.getBean("game",Game.class);
+                context.getBean(Game.class);
 
         //game.reset();
         context.close();
