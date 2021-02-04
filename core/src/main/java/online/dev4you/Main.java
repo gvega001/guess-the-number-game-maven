@@ -27,11 +27,10 @@ public class Main {
         log.info("number = {}", number);
 
         //get the game bean context (container)
-        Game game = context.getBean(Game.class);
+        Game game =
+                context.getBean("game",Game.class);
 
-        //call reset method
-        game.reset();
-
+        //game.reset();
         context.close();
     }
 }
