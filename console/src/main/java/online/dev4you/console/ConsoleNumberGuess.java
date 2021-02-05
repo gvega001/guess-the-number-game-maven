@@ -13,7 +13,7 @@ public class ConsoleNumberGuess {
     private static final Logger log = LoggerFactory.getLogger(ConsoleNumberGuess.class);
 
     @EventListener
-    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        log.info("Container ready for use");
+    public void start(ContextRefreshedEvent contextRefreshedEvent) {
+        log.info("start() --> Container ready for use");
     }
 }
