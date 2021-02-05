@@ -1,6 +1,8 @@
 package online.dev4you.console;
 
 import online.dev4you.AppConfig;
+import online.dev4you.MessageGenerator;
+import online.dev4you.MessageGeneratorImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;

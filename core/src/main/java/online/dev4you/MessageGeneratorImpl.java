@@ -23,7 +23,7 @@ public class MessageGeneratorImpl implements MessageGenerator{
     // === init ==
     @PostConstruct
     public void init(){
-        log.info("game ={}", game);
+        log.info("game = {}", game.getRemainGuesses());
     }
 
     @Override
