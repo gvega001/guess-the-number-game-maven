@@ -20,7 +20,7 @@ public class GameImpl implements Game{
     private final int guessCount = 5;
     private int number;
     private int guess;
-    private int smallest;
+    private int smallest=1;
     private int biggest;
     private int remainingGuesses;
     private boolean validNumberRange = true;
@@ -29,8 +29,8 @@ public class GameImpl implements Game{
     @PostConstruct
     @Override
     public void reset() {
-        smallest = 0;
-        guess = 0;
+        smallest =1;
+        guess=0;
         remainingGuesses = guessCount;
         biggest = numberGenerator.getMaxNumber();
         number = numberGenerator.next();
@@ -75,10 +75,10 @@ public class GameImpl implements Game{
     public void check() {
         checkValidNumberRange();
         if(validNumberRange){
-            if(guess>number){
+            if(guess<number){
                 biggest = guess =1;
             }
-            if(guess< number){
+            if(guess> number){
                 smallest = guess +1;
             }
         }
@@ -100,7 +100,13 @@ public class GameImpl implements Game{
     }
 
     //**=== private methods **===
-    private void checkValidNumberRange(){
-        validNumberRange = (guess >= smallest) && (guess <= biggest);
+    private void checkValidNumberRange()
+    {
+        if(guess>=1&& guess<= getBiggest()){
+            validNumberRange= true;
+        }else {
+            validNumberRange = false;
+        }
+
     }
 }

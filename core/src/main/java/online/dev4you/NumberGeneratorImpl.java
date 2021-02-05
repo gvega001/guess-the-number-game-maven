@@ -10,8 +10,7 @@ public class NumberGeneratorImpl implements NumberGenerator{
     //******====  Fields     =====*****
     private final Random random = new Random();
 
-    private final int maxNumber = 100;
-
+    private int maxNumber = 100;
     //******====  Public Methods =====****
     @Override
     public int next() {
